@@ -29,7 +29,11 @@ sudo service httpd start
 sudo chkconfig httpd on
 
 # PHP5 - Composer package system installation
-echo "Installing composer"
-curl -s https://getcomposer.org/installer | php
-mv composer.phar /usr/bin/composer.phar
-ln -s /usr/bin/composer.phar /usr/bin/composer
+echo "Installing composer\n"
+if [ ! -x /usr/bin/wget ] ; then
+    curl -s https://getcomposer.org/installer | php
+    mv composer.phar /usr/local/bin/composer
+    echo "Done!"
+else
+    echo "Composer is installed"
+fi
