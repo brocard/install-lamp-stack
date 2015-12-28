@@ -17,9 +17,12 @@ echo -e "\e[31m\e[1mEnabled repo php56\e[0m\n"
 sed -i '/\[remi-php56\]/,/enabled=0/ { s/enabled=0/enabled=1/ }' /etc/yum.repos.d/remi.repo
 
 #install httpd for Centos 6.x
-sudo yum -y install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml
+yum -y install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml
 
-sudo yum update -y
+#yum update -y
+
+#install git [version control system]
+yum install git -y
 
 #Only first time to install
 echo -e "\e[31m\e[1mStar httpd service\e[0m"
