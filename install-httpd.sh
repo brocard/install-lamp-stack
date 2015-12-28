@@ -13,7 +13,7 @@ wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
 
-echo "Enabled repo php56 \n"
+echo -e "\e[31mEnabled repo php56\e[0m\n"
 sed -i '/\[remi-php56\]/,/enabled=0/ { s/enabled=0/enabled=1/ }' /etc/yum.repos.d/remi.repo
 
 #install httpd for Centos 6.x
