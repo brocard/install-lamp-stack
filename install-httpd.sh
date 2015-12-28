@@ -16,7 +16,7 @@ rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
 #install httpd for Centos 6.x
 sudo yum -y install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml
 
-sudo yum -y update
+sudo yum update -y
 
 #Only first time to install
 echo "star httpd service"
