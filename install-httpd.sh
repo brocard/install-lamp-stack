@@ -18,8 +18,15 @@ sudo yum -y install httpd httpd-devel php php-mysql php-common php-gd php-mbstri
 
 sudo yum update
 
-#only firt time install
+#Only first time to install
+echo "star httpd service"
 sudo service httpd start
 
 #to enable service
 sudo chkconfig httpd on
+
+# PHP5 - Composer package system installation
+echo "Installing composer"
+curl -s https://getcomposer.org/installer | php
+mv composer.phar /usr/bin/composer.phar
+ln -s /usr/bin/composer.phar /usr/bin/composer
