@@ -26,10 +26,10 @@ yum install git -y
 
 #Only first time to install
 echo -e "\e[31m\e[1mStar httpd service\e[0m"
-sudo service httpd start
+service httpd start
 
 #to enable service
-sudo chkconfig httpd on
+chkconfig httpd on
 
 # PHP5 - Composer package system installation
 echo "Installing composer\n"
