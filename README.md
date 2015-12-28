@@ -1,4 +1,4 @@
-# Install Lamp Stack
+# Install LAMP Stack
 
 
 Installation guide
