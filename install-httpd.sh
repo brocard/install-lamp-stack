@@ -6,7 +6,7 @@ if [ `id -u` -ne '0' ]; then
 fi
 
 if [ ! -x /usr/bin/wget ] ; then
-    yum install wget -y
+    yum -y install wget
 fi
 
 wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
@@ -16,7 +16,7 @@ rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
 #install httpd for Centos 6.x
 sudo yum -y install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml
 
-sudo yum update
+sudo yum -y update
 
 #Only first time to install
 echo "star httpd service"
