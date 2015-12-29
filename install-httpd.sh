@@ -33,7 +33,8 @@ chkconfig httpd on
 
 # PHP5 - Composer package system installation
 echo "Installing composer\n"
-if [ ! -x /usr/bin/wget ] ; then
+if [ ! -x /usr/local/bin/composer ] ; 
+then
     curl -s https://getcomposer.org/installer | php
     mv composer.phar /usr/local/bin/composer
     echo -e "\e[32mDone!\e[0m"
