@@ -20,10 +20,10 @@ sed -i '/\[remi-php56\]/,/enabled=0/ { s/enabled=0/enabled=1/ }' /etc/yum.repos.
 yum install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml \
   php-opcache php-intl -y
 
-yum update -y
+yum update -y && yum clean all
 
 #install git [version control system]
-yum install git -y
+yum install git -y && yum clean all
 
 #Only first time to install
 echo -e "\e[31m\e[1mStar httpd service\e[0m"
