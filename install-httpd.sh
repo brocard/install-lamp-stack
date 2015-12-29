@@ -19,7 +19,7 @@ sed -i '/\[remi-php56\]/,/enabled=0/ { s/enabled=0/enabled=1/ }' /etc/yum.repos.
 #install httpd for Centos 6.x
 yum -y install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml
 
-#yum update -y
+yum update -y
 
 #install git [version control system]
 yum install git -y
