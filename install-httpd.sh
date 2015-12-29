@@ -20,6 +20,7 @@ sed -i '/\[remi-php56\]/,/enabled=0/ { s/enabled=0/enabled=1/ }' /etc/yum.repos.
 yum install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml \
   php-opcache php-intl -y
 
+echo -e "\e[34mUpdate and Clean yum command\e[0m"
 yum update -y && yum clean all
 
 #install git [version control system]
@@ -38,7 +39,7 @@ chkconfig git on
 #service httpd restart
 
 # PHP5 - Composer package system installation
-echo "Installing composer\n"
+echo "\e[34mInstalling composer\e[0m"
 if [ ! -x /usr/local/bin/composer ] ; 
 then
     curl -s https://getcomposer.org/installer | php
