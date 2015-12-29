@@ -17,7 +17,8 @@ echo -e "\e[31m\e[1mEnabled repo php56\e[0m\n"
 sed -i '/\[remi-php56\]/,/enabled=0/ { s/enabled=0/enabled=1/ }' /etc/yum.repos.d/remi.repo
 
 #install httpd for Centos 6.x
-yum -y install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml
+yum install httpd httpd-devel php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml \
+  php-opcache php-intl -y
 
 yum update -y
 
@@ -30,6 +31,9 @@ service httpd start
 
 #to enable service
 chkconfig httpd on
+
+#sed -i '/\#ServerName\swww\.example\.com\:80/ { s/enabled=0/ServerName\swww.example.com:80/ }' /etc/httpd/conf/httpd.conf
+#ServerName www.example.com:80
 
 # PHP5 - Composer package system installation
 echo "Installing composer\n"
