@@ -31,9 +31,11 @@ service httpd start
 
 #to enable service
 chkconfig httpd on
+chkconfig git on
 
-#sed -i '/\#ServerName\swww\.example\.com\:80/ { s/enabled=0/ServerName\swww.example.com:80/ }' /etc/httpd/conf/httpd.conf
 #ServerName www.example.com:80
+#sed -i '/\#ServerName\swww.example.com:80/ { s/#ServerName\swww.example.com:80/ServerName www.example.com:80/ }' /etc/httpd/conf/httpd.conf
+#service httpd restart
 
 # PHP5 - Composer package system installation
 echo "Installing composer\n"
