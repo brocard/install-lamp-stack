@@ -12,13 +12,11 @@ clear
 
 rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
 
-clear
-
-echo -e "\n\e[31m\e[1m	Replace Mysql55\e[0m\n"
+echo -e "\n\e[31m\e[1m	Install Mysql\e[0m\n"
 yum install mysql.`uname -i` yum-plugin-replace -y
 
 echo -e "\n\e[31m\e[1m	Replace Mysql55\e[0m\n"
-yum replace mysql --replace-with mysql55w
+yum replace mysql --replace-with mysql55w -y
 
 echo -e "\n\e[31m\e[1m	Install Mysql Server\e[0m\n"
 yum install mysql55w mysql55w-server -y
