@@ -8,9 +8,20 @@ fi
 echo -e "\e[32m\e[1m	Update and Clean with yum command\e[0m"
 yum update -y && yum clean all
 
-echo -e "\n\e[31m\e[1m	Install Mysql Server\e[0m\n"
-yum install mysql-server -y
+clear
 
+rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
+
+clear
+
+echo -e "\n\e[31m\e[1m	Replace Mysql55\e[0m\n"
+yum install mysql.`uname -i` yum-plugin-replace -y
+
+echo -e "\n\e[31m\e[1m	Replace Mysql55\e[0m\n"
+yum replace mysql --replace-with mysql55w
+
+echo -e "\n\e[31m\e[1m	Install Mysql Server\e[0m\n"
+yum install mysql55w mysql55w-server -y
 
 echo -e "\n\e[31m\e[1m	Restart Mysql Service\e[0m\n"
 service mysqld start
