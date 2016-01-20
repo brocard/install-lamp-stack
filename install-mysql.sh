@@ -9,7 +9,7 @@ echo -e "\e[34m Update and Clean with yum command\e[0m"
 yum update -y && yum clean all
 
 echo -e "\e[31m\e[1m Install Mysql Server\e[0m\n"
-yum install -y mysql-server 
+yum install mysql-server -y
 
 
 echo -e "\e[31m\e[1m Restart Mysql Service\e[0m\n"
